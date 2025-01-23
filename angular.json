@@ -3,9 +3,19 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "codecanvas-frontend": {
+    "codecanvas": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:component": {
+          "standalone": false
+        },
+        "@schematics/angular:directive": {
+          "standalone": false
+        },
+        "@schematics/angular:pipe": {
+          "standalone": false
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/codecanvas-frontend",
+            "outputPath": "dist/codecanvas",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -59,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "codecanvas-frontend:build:production"
+              "buildTarget": "codecanvas:build:production"
             },
             "development": {
-              "buildTarget": "codecanvas-frontend:build:development"
+              "buildTarget": "codecanvas:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -92,5 +102,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "9b6a0bd9-3491-494f-bf85-fefc3f258432"
   }
 }

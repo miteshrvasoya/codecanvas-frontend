@@ -1,0 +1,80 @@
+<div class="code-gen-container">
+  <h1 class="code-gen-title">AI Code Generator</h1>
+
+  <!-- Prompt Input Section -->
+  <div class="code-gen-input-section">
+    <label for="code-gen-prompt" class="code-gen-label">Enter your prompt:</label>
+    <textarea
+      id="code-gen-prompt"
+      [(ngModel)]="prompt"
+      placeholder="Describe the UI component you want to generate..."
+      class="code-gen-textarea"
+    ></textarea>
+    <button class="code-gen-button" (click)="generateCode()">Generate Code</button>
+  </div>
+
+  <!-- View Mode Toggle -->
+  <div class="code-gen-view-toggle">
+    <button
+      class="code-gen-toggle-btn"
+      [class.active]="viewMode === 'code'"
+      (click)="setViewMode('code')"
+    >
+      Code View
+    </button>
+    <button
+      class="code-gen-toggle-btn"
+      [class.active]="viewMode === 'preview'"
+      (click)="setViewMode('preview')"
+    >
+      Preview UI
+    </button>
+  </div>
+
+  <!-- Code View -->
+  <div *ngIf="viewMode === 'code'" class="code-gen-code-view">
+    <!-- Tabs -->
+    <div class="code-gen-tabs">
+      <button
+        class="code-gen-tab-btn"
+        [class.active]="activeTab === 'html'"
+        (click)="setActiveTab('html')"
+      >
+        HTML
+      </button>
+      <button
+        class="code-gen-tab-btn"
+        [class.active]="activeTab === 'css'"
+        (click)="setActiveTab('css')"
+      >
+        CSS
+      </button>
+      <button
+        class="code-gen-tab-btn"
+        [class.active]="activeTab === 'js'"
+        (click)="setActiveTab('js')"
+      >
+        JavaScript
+      </button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="code-gen-tab-content">
+      <pre *ngIf="activeTab === 'html'" class="code-gen-pre">
+        <code>{{ generatedHtml }}</code>
+      </pre>
+      <pre *ngIf="activeTab === 'css'" class="code-gen-pre">
+        <code>{{ generatedCss }}</code>
+      </pre>
+      <pre *ngIf="activeTab === 'js'" class="code-gen-pre">
+        <code>{{ generatedJs }}</code>
+      </pre>
+    </div>
+  </div>
+
+  <!-- Preview UI -->
+  <div *ngIf="viewMode === 'preview'" class="code-gen-preview-section">
+    <h2 class="code-gen-preview-title">Preview</h2>
+    <div #previewContainer class="code-gen-preview-box"></div>
+  </div>
+</div>

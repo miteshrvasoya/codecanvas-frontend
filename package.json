@@ -1,5 +1,5 @@
 {
-  "name": "codecanvas-frontend",
+  "name": "codecanvas",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -13,7 +13,7 @@
     "@angular/animations": "^19.0.0",
     "@angular/common": "^19.0.0",
     "@angular/compiler": "^19.0.0",
-    "@angular/core": "^19.0.0",
+    "@angular/core": "^19.1.1",
     "@angular/forms": "^19.0.0",
     "@angular/platform-browser": "^19.0.0",
     "@angular/platform-browser-dynamic": "^19.0.0",
@@ -25,7 +25,7 @@
   "devDependencies": {
     "@angular-devkit/build-angular": "^19.0.5",
     "@angular/cli": "^19.0.5",
-    "@angular/compiler-cli": "^19.0.0",
+    "@angular/compiler-cli": "^19.1.1",
     "@types/jasmine": "~5.1.0",
     "autoprefixer": "^10.4.20",
     "jasmine-core": "~5.4.0",
