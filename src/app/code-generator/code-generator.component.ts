@@ -86,4 +86,12 @@ export class CodeGeneratorComponent implements AfterViewChecked {
   setActiveTab(tab: 'html' | 'css' | 'js') {
     this.activeTab = tab;
   }
+
+  copyCode(code: string): void {
+    navigator.clipboard.writeText(code).then(() => {
+      alert('Code copied to clipboard!');
+    }).catch(err => {
+      console.error('Failed to copy code:', err);
+    });
+  }
 }
